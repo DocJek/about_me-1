@@ -1,7 +1,15 @@
+/*Aeone Singson - Code 201 - About Me*/
+
+/*applies to whole doc*/
 *{
-  font-family: sans-serif;
+  font-family: Garamond;
 }
 
+/*style headers*/
 h1{
-  color: blue;
+  color: #008080;
+}
+
+h2{
+  color: green;
 }
