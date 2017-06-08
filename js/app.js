@@ -1,8 +1,10 @@
 // Aeone Singson - Code 201 - About Me
+// Lab 3
 
 'use strict';
 // design guessing game
 
+// var init
 var userPoints = 0;
 var answer;
 
@@ -18,31 +20,17 @@ questions.push('Am I tall? ');
 questions.push('Do I like bananas? ');
 questions.push('Do I drink coffee? ');
 questions.push('Do I like to draw? ');
+questions.push('Guess a number between 0-9: ');
+questions.push('What other cities have I lived in? ');
 
 // ask five questions
-for(var i = 0; i < 5; i++){
-  // capture answer to questions in a variable
-  answer = askQuestion(questions[i]).toLowerCase();
-  // print to console
-  console.log(questions[i] + ': ' + answer);
-  // get points
-  userPoints = getPoints(i, answer);
-}
-
-// asks question
-function askQuestion(question){
-  answer = prompt(question);
-  return answer;
-}
-
-// assign points based on responses
-// account for responses: y/yes, n/no, neither
-function getPoints(i, answer){
+for(var i = 0; i < questions.length; i++){
+  answer = prompt(questions[i]).toLowerCase();
   if(i === 0 || i === 3 || i === 4){
     if(answer === 'y' || answer === 'yes'){
       alert('Correct!');
-      alert('You have ' + userPoints + ' total points.');
       userPoints++;
+      alert('You have ' + userPoints + ' total points.');
     } else {
       alert('Wrong.');
       alert('You have ' + userPoints + ' total points. The dragon is giddy with anticipation.');
@@ -50,14 +38,31 @@ function getPoints(i, answer){
   } else if (i === 1 || i === 2){
     if(answer === 'n' || answer === 'no'){
       alert('Correct!');
-      alert('You have ' + userPoints + ' total points.');
       userPoints++;
+      alert('You have ' + userPoints + ' total points.');
     } else {
       alert('Wrong.');
       alert('You have ' + userPoints + ' total points. The dragon is giddy with anticipation.');
     }
+  } else if (i === 5){
+    // TODO: finish
+    // guess a number
+    if(answer != 8){
+      for(var j = 0; j < 4; j++){
+        answer = prompt('Guess again: ');
+        if(answer == 8){
+          break;
+        }
+      }
+    } else {
+      alert('Correct!');
+      userPoints++;
+      alert('You have ' + userPoints + ' total points.');
+    }
+  } else if (i === 6){
+    // TODO: finish
+    // guess a city
   }
-  return userPoints;
 }
 
 // present score
