@@ -24,6 +24,7 @@ function getUserName() {
 }
 
 // array of questions to ask
+
 function buildQuestions() {
   questions.push('Is my favorite color green? ');
   questions.push('Am I tall? ');
@@ -35,6 +36,17 @@ function buildQuestions() {
 }
 // take all yes/no questions and put into own function
 // take question 6 and 7 into own seperate function
+
+// take all yes/no questions and put into own function
+// take question 6 and 7 into own separate function
+var questions = ['Is my favorite color green? '];
+questions.push('Am I tall? ');
+questions.push('Do I like bananas? ');
+questions.push('Do I drink coffee? ');
+questions.push('Do I like to draw? ');
+// questions.push('Guess a number between 0-9: ');
+// questions.push('What other cities have I lived in? ');
+
 
 function askQuestion (question) {
   answer = prompt(question);
