@@ -15,6 +15,8 @@ alert('This is a guessing game to determine if you\'re my friend. You will answe
 alert('Let\'s begin!');
 
 // array of questions to ask
+// take all yes/no questions and put into own function
+// take question 6 and 7 into own separate function
 var questions = ['Is my favorite color green? '];
 questions.push('Am I tall? ');
 questions.push('Do I like bananas? ');
