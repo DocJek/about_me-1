@@ -20,51 +20,67 @@ questions.push('Am I tall? ');
 questions.push('Do I like bananas? ');
 questions.push('Do I drink coffee? ');
 questions.push('Do I like to draw? ');
-questions.push('Guess a number between 0-9: ');
-questions.push('What other cities have I lived in? ');
+// questions.push('Guess a number between 0-9: ');
+// questions.push('What other cities have I lived in? ');
 
+function askQuestion (question) {
+  answer = prompt(question);
+  return answer;
+}
 // ask five questions
 for(var i = 0; i < questions.length; i++){
-  answer = prompt(questions[i]).toLowerCase();
-  if(i === 0 || i === 3 || i === 4){
-    if(answer === 'y' || answer === 'yes'){
-      alert('Correct!');
-      userPoints++;
-      alert('You have ' + userPoints + ' total points.');
-    } else {
-      alert('Wrong.');
-      alert('You have ' + userPoints + ' total points. The dragon is giddy with anticipation.');
-    }
-  } else if (i === 1 || i === 2){
-    if(answer === 'n' || answer === 'no'){
-      alert('Correct!');
-      userPoints++;
-      alert('You have ' + userPoints + ' total points.');
-    } else {
-      alert('Wrong.');
-      alert('You have ' + userPoints + ' total points. The dragon is giddy with anticipation.');
-    }
-  } else if (i === 5){
-    // TODO: finish
-    // guess a number
-    if(answer != 8){
-      for(var j = 0; j < 4; j++){
-        answer = prompt('Guess again: ');
-        if(answer == 8){
-          break;
-        }
-      }
-    } else {
-      alert('Correct!');
-      userPoints++;
-      alert('You have ' + userPoints + ' total points.');
-    }
-  } else if (i === 6){
-    // TODO: finish
-    // guess a city
-  }
+  answer = askQuestion(questions[i]).toLowerCase();
+  console.log(questions[i] + ': ' + answer);
+  userPoints = getPoints(i, answer);
+}
+ // else if (i === 5){
+//     // TODO: finish
+//     // guess a number
+//     if(answer != 8){
+//       for(var j = 0; j < 4; j++){
+//         answer = prompt('Guess again: ');
+//         if(answer == 8){
+//           break;
+//         }
+//       }
+//     } else {
+//       alert('Correct!');
+//       userPoints++;
+//       alert('You have ' + userPoints + ' total points.');
+//     }
+//   } else if (i === 6){
+//     // TODO: finish
+//     // guess a city
+//   }
+// }
+
+function correct() {
+  alert('Correct! You have a score of ' + userPoints);
 }
 
+function incorrect() {
+  alert('Sorry that was the wrong answer. You have a score of ' + userPoints);
+}
+
+function getPoints(i, answer) {
+  if (i === 0 || i === 3 || i === 4) {
+    if (answer === 'y' || answer === 'yes') {
+      userPoints++;
+      correct();
+    } else {
+      incorrect();
+    }
+  } else if (i === 1 || i === 2) {
+    if (answer === 'n' || answer === 'no') {
+      userPoints++;
+      correct();
+    } else {
+      incorrect();
+    }
+  } else {
+    incorrect();
+  } return userPoints;
+}
 // present score
 alert('Your total score is ' + userPoints + '.');
 if(userPoints >= 3){
