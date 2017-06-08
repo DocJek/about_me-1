@@ -1,4 +1,5 @@
 /*Aeone Singson - Code 201 - About Me*/
+/*Lab 2 Resubmit*/
 
 /*applies to whole doc*/
 *{
@@ -6,10 +7,14 @@
 }
 
 /*style headers*/
+header{
+  color: green;
+}
+
 h1{
   color: #008080;
 }
 
-h2{
-  color: green;
+#about-me{
+  color: #99ccff;
 }
