@@ -45,6 +45,7 @@ for(var i = 0; i < questions.length; i++){
       alert('You have ' + userPoints + ' total points. The dragon is giddy with anticipation.');
     }
   } else if (i === 5){
+    // TODO: finish
     // guess a number
     if(answer != 8){
       for(var j = 0; j < 4; j++){
@@ -59,6 +60,7 @@ for(var i = 0; i < questions.length; i++){
       alert('You have ' + userPoints + ' total points.');
     }
   } else if (i === 6){
+    // TODO: finish
     // guess a city
   }
 }
